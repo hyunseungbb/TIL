@@ -91,9 +91,12 @@ $ git commit -> merge branch 생성
 
 > 원격저장소 연결
 
-
-
-- push
-- pull
+```bash
+$ git remote add origin {원격저장소 주소} : local repository를 origin이라는 이름의 remote repository에 연결한다.
+$ git remote -v : 원격저장소 주소 출력
+$ git push -u origin : 원격저장소에 로컬저장소 파일 백업/다음부터는 git push만 해도 된다.
+$ git clone {주소} : 현재 디렉토리에 원격 저장소의 clone 생성  
+$ git pull
+```
 
 ## 3. 협업
