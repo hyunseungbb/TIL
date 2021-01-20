@@ -36,7 +36,7 @@ reset은 협업하기 전 버전까지만 사용해야한다.
 $ git revert {해당 버전 주소(commit id)} : 해당 버전 이전의 버전으로 돌아간다.
 역순으로 revert 하지 않으면 충돌이 일어나게 된다.
 $ git commit --amend : commit 수정 가능
-$ rm -rf .git : master 사라짐
+$ rm -rf .git : master 사라짐 폴더 삭제(조심!)
 ```
 
 ### branch
@@ -100,3 +100,17 @@ $ git pull
 ```
 
 ## 3. 협업
+
+> pull vs fetch
+
+```bash
+git pull = git fetch + git merge FETCH_HEAD
+```
+
+- 신중하게 원격 저장소의 파일을 가져오고 싶을 때 fetch를 사용한다.
+
+```bash
+git fetch # 원격 저장소만 업데이트 한다. remote branch만 가져올 때 사용
+# .git/FETCH_HEAD 폴더 생상
+git merge FETCH_HEAD #가장 최근 fetch 내용을 merge한다.
+```
